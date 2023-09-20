@@ -1,0 +1,39 @@
+name: Simple Manual Workflow Three Env
+
+on:
+  workflow_dispatch
+
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: https://github.com
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script
+        run: |
+          echo "I am running a job in Dev environment"
+
+  Test:
+    runs-on: ubuntu-latest
+    environment:
+      name: Test
+      url: https://github.com
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script
+        run: |
+            echo "I am running a job in Test environment"
+
+  Production:
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: https://github.com
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script
+        run: |
+            echo "I am running a job in Production environment"
+          
