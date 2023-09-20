@@ -20,6 +20,7 @@ jobs:
     environment:
       name: Test
       url: https://github.com
+    needs: DEV
     steps:
       - uses: actions/checkout@v2
       - name: Run a script
@@ -31,6 +32,7 @@ jobs:
     environment:
       name: Production
       url: https://github.com
+    needs: Test
     steps:
       - uses: actions/checkout@v2
       - name: Run a script
